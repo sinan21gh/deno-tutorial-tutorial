@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+    font-family: system-ui;
+
+    header,
+    main,
+    footer {
+        padding-inline: 1rem;
+    }
+
+    header, footer {
+        background: linear-gradient(#222, #444);
+        color: #eee;
+        a, button {
+            color: inherit;
+        }
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-block: 0.5rem;
+
+        h1 {
+            font-weight: 300;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 0.5rem;
+            a {
+                text-decoration: none;
+            }
+            button, a {
+                background: hsla(0, 0%, 100%, 0.1);
+                padding: 0.25rem 0.5rem;
+            }
+            button {
+                border: none;
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        text-align: right;
+    }
+        
+
+}
+
+
+button,
+input {
+    font-size: inherit;
+}
+
+aside#flash {
+    background: orangered;
+    color: white;
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    padding-inline: 2rem;
+    font-size: 1.2em;
+    translate: calc(100% - 1rem);
+    transition: translate 200ms;
+    animation: flash 2s;
+    &:hover {
+        translate: none;
+    }
+}
+
+@keyframes flash {
+    10%, 90% {
+        translate: none;
+    }
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    p.error {
+        margin: 0;
+        grid-column: span 2;
+        color: red;
+        text-align: right;
+        font-size: 0.9em;
+    }
+    label {
+        text-align: right;
+    }
+}
+
+form.auth {
+    gap: 0.5rem;
+    place-self: center;
+    background: linear-gradient(#222, #555);
+    color: #eee;
+    padding: 2rem;
+    button {
+        grid-column: 2;
+        place-self: end;
+    }
+    p.error {
+        color: pink;
+    }
+}
+
+form.new-item {
+    gap: 0 0.5rem;
+    place-self: start;
+    padding: 1rem;
+    background: #ddd;
+    border: 0.5px solid black;
+}
+
+.center {
+    text-align: center;
+}

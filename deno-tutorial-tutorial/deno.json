@@ -1,0 +1,13 @@
+{
+
+  "tasks": {
+    "serve": "deno --watch --allow-env --allow-ffi --allow-net=0.0.0.0:8000 --allow-read=./assets,/home/graeme/.cache/deno/plug main.js",
+    "db:create": "deno --allow-env --allow-ffi --allow-read=/home/graeme/.cache/deno/plug ./app/tasks/db-create.js"
+  },
+  "imports": {
+    "@db/sqlite": "jsr:@db/sqlite@^0.12.0",
+    "@std/encoding": "jsr:@std/encoding@^1.0.10",
+    "@std/html": "jsr:@std/html@^1.0.5",
+    "@std/http": "jsr:@std/http@^1.0.21"
+  }
+}
